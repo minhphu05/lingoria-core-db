@@ -1,0 +1,21 @@
+{
+  "default_db": 0,
+  "users": [
+    {
+      "username": "lingoria_admin",
+      "env_password_key": "REDIS_ADMIN_PASSWORD",
+      "rules": "~* +@all"
+    },
+    {
+      "username": "lingoria_app",
+      "env_password_key": "REDIS_APP_PASSWORD",
+      "rules": "~lingoria:* +@all"
+    }
+  ],
+  "namespaces": [
+    "lingoria:session",
+    "lingoria:catalog",
+    "lingoria:srs",
+    "lingoria:ratelimit"
+  ]
+}
