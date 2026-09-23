@@ -1,0 +1,34 @@
+{
+  "buckets": [
+    {
+      "name": "lingoria-raw",
+      "policy": "private"
+    },
+    {
+      "name": "lingoria-media-original",
+      "policy": "private"
+    },
+    {
+      "name": "lingoria-media-derived",
+      "policy": "download"
+    }
+  ],
+  "users": [
+    {
+      "username": "lingoria_admin",
+      "env_access_key": "MINIO_ADMIN_ACCESS_KEY",
+      "env_secret_key": "MINIO_ADMIN_SECRET_KEY",
+      "policy": "readwrite"
+    },
+    {
+      "username": "media_user",
+      "env_access_key": "MINIO_MEDIA_ACCESS_KEY",
+      "env_secret_key": "MINIO_MEDIA_SECRET_KEY",
+      "policy": "media_policy",
+      "allowed_buckets": [
+        "lingoria-media-original",
+        "lingoria-media-derived"
+      ]
+    }
+  ]
+}

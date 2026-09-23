@@ -1,0 +1,37 @@
+{
+  "databases": [
+    {
+      "name": "lingoria",
+      "owner": "lingoria_admin",
+      "encoding": "UTF8"
+    },
+    {
+      "name": "airflow",
+      "owner": "airflow_user",
+      "encoding": "UTF8"
+    }
+  ],
+  "users": [
+    {
+      "username": "lingoria_admin",
+      "database": "lingoria",
+      "privileges": "ALL",
+      "env_password_key": "PG_APP_PASSWORD"
+    },
+    {
+      "username": "airflow_user",
+      "database": "airflow",
+      "privileges": "ALL",
+      "env_password_key": "AIRFLOW_DB_PASSWORD"
+    }
+  ],
+  "extensions": {
+    "lingoria": [
+      "uuid-ossp",
+      "pgcrypto",
+      "citext",
+      "pg_trgm",
+      "vector"
+    ]
+  }
+}
